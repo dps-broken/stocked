@@ -12,11 +12,16 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+/* Hide the scrollbar */
+::-webkit-scrollbar {
+    width: 0;
+  }
+
 /* Navbar styling */
 .navbar {
     position: fixed; /* Fixed position at the top */
-    top: 0;
-    width: 100%;
+    top: 0px;
+    width: 100vw;
     height: 80px;
     padding: 10px 20px;
     display: flex;
@@ -30,8 +35,11 @@ body, html {
 
 /* Navbar shadow for better separation */
 .navbar.scrolled {
-    background-color: white;
+    background-color: rgb(0, 0, 0);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+
+    
 }
 
 /* Container for navbar items */
@@ -76,7 +84,7 @@ body, html {
 .nav-toggle span {
     width: 30px; /* Adjusted width for better touch target */
     height: 3px;
-    background-color: white;
+    background-color: rgb(243, 243, 243);
 }
 
 /* Slider container styling */
@@ -196,6 +204,51 @@ button:hover {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+/* -------------------
+  #Code For Intero Page
+  --------------------- */
+
+
+.intero-page{
+    width: 50vw;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 2;
+    margin: 0 auto;
+    padding: 4vw;
+    p{
+        text-align: center;
+        color: gray;
+    }
+    h1{
+        text-align: center;
+        color: rgb(4, 0, 255);
+    }
+}
+
+
+#box-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vw;
+    width: 70vw;
+    border: 1px solid red;
+}
+#box-wrapper .box{
+    display: flex;
+    width: 350px;
+    height: 100px;
+    border: 1px solid red;
+}
+
+
+
+
+
 /* Media Query for tablets */
 @media (max-width: 1024px) {
     .slider {
@@ -221,6 +274,52 @@ button:hover {
     .nav-menu {
         gap: 15px; /* Reduce gap for tablets */
     }
+    
+    .nav-toggle {
+        display: flex; /* Show toggle button on mobile */
+    }
+
+    /* Display the navigation menu when toggle button is active */
+    .nav-container.active .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px; /* Adjust top position to prevent overlap with navbar */
+        right: 40px;
+        background-color: rgba(0, 0, 0, 0.818);
+        padding: 20px; /* Increase padding for better touch targets */
+        border-radius: 5px;
+        width: 80%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container.active .nav-menu a {
+        color: rgb(234, 255, 0); /* Change text color in mobile menu */
+        margin: 10px 0;
+        font-size: 1.2em; /* Slightly larger font for readability */
+    }
+
+    /* Adjust toggle button color when scrolling */
+    .navbar.scrolled .nav-toggle span {
+        background-color: rgb(255, 255, 255);
+    }
+    .nav-container{
+        width: 90%;
+    }
+    .text-content p, h1{
+        width: 80%;
+    }
+    .text-content{
+        left: 10%;
+    }
+    .nav-menu {
+        display: none; /* Hide menu on mobile by default */
+    }
+
+
+
+
 }
 
 /* Media Query for phones */
@@ -257,24 +356,26 @@ button:hover {
     .nav-container.active .nav-menu {
         display: flex;
         flex-direction: column;
+        align-items: center;
         position: absolute;
-        top: 60px; /* Adjust top position to prevent overlap with navbar */
-        right: 20px;
-        background-color: white;
+        top: 70px; /* Adjust top position to prevent overlap with navbar */
+        right: 40px;
+        background-color: rgba(0, 0, 0, 0.818);
         padding: 20px; /* Increase padding for better touch targets */
         border-radius: 5px;
+        width: 80%;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
 
     .nav-container.active .nav-menu a {
-        color: black; /* Change text color in mobile menu */
+        color: rgb(234, 255, 0); /* Change text color in mobile menu */
         margin: 10px 0;
         font-size: 1.2em; /* Slightly larger font for readability */
     }
 
     /* Adjust toggle button color when scrolling */
     .navbar.scrolled .nav-toggle span {
-        background-color: black;
+        background-color: rgb(255, 255, 255);
     }
     .nav-container{
         width: 90%;
@@ -284,5 +385,18 @@ button:hover {
     }
     .text-content{
         left: 10%;
+    }
+    .intero-page{
+        width: 80vw;
+        border: 1px solid red;
+        line-height: 1.5;
+        margin: 0 auto;
+        padding: 3vw;
+        p{
+            text-align: center;
+        }
+        h1{
+            text-align: center;
+        }
     }
 }
